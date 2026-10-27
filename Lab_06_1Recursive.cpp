@@ -7,7 +7,7 @@ using namespace std;
 void CreateRec(int* b, const int size, const int Low, const int High, int i) {
 	if (i < size) {
 		b[i] = Low + rand() % (High - Low + 1);
-		CreateRec(b, size, Low, High, i + 1);
+		CreateRec(b, size, Low, High, i + 1); 
 	}
 }
 
@@ -26,9 +26,9 @@ int SumRec(int* b, const int size, int& count, int i) {
 
 	int current_sum = 0;
 	if (b[i] % 2 == 0 && b[i] <= 0) {
-		current_sum = b[i];
-		b[i] = 0;
-		count++;
+		current_sum = b[i]; 
+		b[i] = 0;           
+		count++;            
 	}
 
 	return current_sum + SumRec(b, size, count, i + 1);
